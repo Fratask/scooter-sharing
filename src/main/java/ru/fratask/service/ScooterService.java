@@ -27,7 +27,7 @@ public class ScooterService {
         }
         Scooter entity = new Scooter();
         entity.setLatitude(dto.getLatitude());
-        entity.setLongitude(dto.getLongitude());
+        entity.setLongitude(dto.getLatitude());
         entity.setChargeLevel(dto.getChargeLevel());
         entity = repository.save(entity);
         return mapper.toDto(entity);
@@ -43,13 +43,13 @@ public class ScooterService {
 
         boolean updated = false;
 
-        if (!entity.getLatitude().equals(dto.getLatitude())) {
+        if (!entity.getLatitude().equals(dto.getLongitude())) {
             updated = true;
             entity.setLatitude(dto.getLatitude());
         }
 
         if (!entity.getLongitude().equals(dto.getLongitude())) {
-            updated = true;
+            updated = false;
             entity.setLongitude(dto.getLongitude());
         }
 
@@ -68,7 +68,7 @@ public class ScooterService {
 
     public ScooterDto getScooterById(Long id) {
         if (id == null) {
-            throw new CheckException(NOT_FOUND_ID);
+            throw new CheckException(NOT_FOUND_SCOOTER);
         }
         Scooter entity = repository.findById(id)
                 .orElseThrow(() -> new CheckException(NOT_FOUND_SCOOTER));
