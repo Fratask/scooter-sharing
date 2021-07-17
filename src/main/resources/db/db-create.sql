@@ -44,7 +44,7 @@ create table scooters
 create table slots
 (
     id bigserial not null primary key,
-    station_id bigint not null references stations (id),
+    station_id bigint not null referenzces stations (id),
     number integer not null,
     is_open boolean,
     scooter_id bigint not null references scooters (id)
@@ -142,3 +142,8 @@ create table failed_payments
 
     alter table failed_payments
         owner to sa;
+
+-- [ScooterSharing-3]
+alter table scooters alter column latitude type double precision;
+alter table scooters alter column longitude type double precision;
+
