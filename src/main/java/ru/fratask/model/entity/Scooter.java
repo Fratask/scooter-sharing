@@ -13,8 +13,6 @@ import javax.persistence.Table;
 public class Scooter {
 
     @Id
-    @SequenceGenerator(name = "scooter_id_generator", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "scooter_id_generator")
     private Long id;
 
     @Column(name = "longitude")
