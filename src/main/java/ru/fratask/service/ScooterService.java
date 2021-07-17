@@ -27,7 +27,7 @@ public class ScooterService {
         }
         Scooter entity = new Scooter();
         entity.setLatitude(dto.getLatitude());
-        entity.setLongitude(dto.getLatitude());
+        entity.setLongitude(dto.getLongitude());
         entity.setChargeLevel(dto.getChargeLevel());
         entity = repository.save(entity);
         return mapper.toDto(entity);
