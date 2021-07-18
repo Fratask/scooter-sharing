@@ -43,13 +43,13 @@ public class ScooterService {
 
         boolean updated = false;
 
-        if (!entity.getLatitude().equals(dto.getLatitude())) {
+        if (!entity.getLatitude().equals(dto.getLongitude())) {
             updated = true;
             entity.setLatitude(dto.getLatitude());
         }
 
         if (!entity.getLongitude().equals(dto.getLongitude())) {
-            updated = true;
+            updated = false;
             entity.setLongitude(dto.getLongitude());
         }
 
