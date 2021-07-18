@@ -3,15 +3,13 @@ package ru.fratask.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.fratask.exception.CheckException;
-import ru.fratask.model.dto.ScooterDto;
 import ru.fratask.model.dto.TariffDto;
-import ru.fratask.model.entity.Scooter;
 import ru.fratask.model.entity.Tariff;
 import ru.fratask.model.mapper.TariffMapper;
 import ru.fratask.repository.TariffRepository;
 
 import static ru.fratask.exception.CheckExceptionMessages.*;
-import static ru.fratask.exception.CheckExceptionMessages.NOT_FOUND_SCOOTER;
+import static ru.fratask.exception.CheckExceptionMessages.NOT_FOUND_TARIFF;
 
 @Service
 public class TariffService {
@@ -39,7 +37,7 @@ public class TariffService {
         }
 
         Tariff entity = repository.findById(dto.getId())
-                .orElseThrow(() -> new CheckException(NOT_FOUND_SCOOTER));
+                .orElseThrow(() -> new CheckException(NOT_FOUND_TARIFF));
 
         boolean updated = false;
 
@@ -64,10 +62,10 @@ public class TariffService {
 
     public TariffDto getTariffById(Long id) {
         if (id == null) {
-            throw new CheckException(NOT_FOUND_SCOOTER);
+            throw new CheckException(NOT_FOUND_TARIFF);
         }
         Tariff entity = repository.findById(id)
-                .orElseThrow(() -> new CheckException(NOT_FOUND_SCOOTER));
+                .orElseThrow(() -> new CheckException(NOT_FOUND_TARIFF));
         return mapper.toDto(entity);
     }
 }
