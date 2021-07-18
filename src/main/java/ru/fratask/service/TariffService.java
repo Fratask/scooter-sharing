@@ -1,6 +1,7 @@
 package ru.fratask.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import ru.fratask.exception.CheckException;
 import ru.fratask.model.dto.ScooterDto;
 import ru.fratask.model.dto.TariffDto;
@@ -12,6 +13,7 @@ import ru.fratask.repository.TariffRepository;
 import static ru.fratask.exception.CheckExceptionMessages.*;
 import static ru.fratask.exception.CheckExceptionMessages.NOT_FOUND_SCOOTER;
 
+@Service
 public class TariffService {
 
     @Autowired

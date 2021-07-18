@@ -15,7 +15,7 @@ public class Tariff {
     private String name;
 
     @Column(name = "price_per_minute")
-    private Long pricePerMinute;
+    private Integer pricePerMinute;
 
     public Long getId() {
         return id;
@@ -33,11 +33,11 @@ public class Tariff {
         this.name = name;
     }
 
-    public Long getPricePerMinute() {
+    public Integer getPricePerMinute() {
         return pricePerMinute;
     }
 
-    public void setPricePerMinute(Long pricePerMinute) {
+    public void setPricePerMinute(Integer pricePerMinute) {
         this.pricePerMinute = pricePerMinute;
     }
 }

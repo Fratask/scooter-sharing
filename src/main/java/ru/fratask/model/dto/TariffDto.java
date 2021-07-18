@@ -5,7 +5,7 @@ public class TariffDto {
 
     private String name;
 
-    private Long pricePerMinute;
+    private Integer pricePerMinute;
 
     public Long getId() {
         return id;
@@ -23,11 +23,11 @@ public class TariffDto {
         this.name = name;
     }
 
-    public Long getPricePerMinute() {
+    public Integer getPricePerMinute() {
         return pricePerMinute;
     }
 
-    public void setPricePerMinute(Long pricePerMinute) {
+    public void setPricePerMinute(Integer pricePerMinute) {
         this.pricePerMinute = pricePerMinute;
     }
 }

@@ -9,7 +9,7 @@ import ru.fratask.service.ScooterService;
 import ru.fratask.service.TariffService;
 
 @Controller
-@RequestMapping(ScooterController.BASE_MAPPING)
+@RequestMapping(TariffController.BASE_MAPPING)
 public class TariffController {
 
     protected final static String BASE_MAPPING = "/tariff/v1";
